@@ -107,14 +107,7 @@ h3 {
 	}
 
 	.hpAnnouncements_p {
-		margin: 0;
-	}
-	
-	.hpAnnoncements_separate {
-		margin: 10px 0 7px 0;
-		width: 300px;
-		border-top: 1px dotted #333;
-		clear: both;
+		margin-top: 0;
 	}
 
 #footerContainer {
