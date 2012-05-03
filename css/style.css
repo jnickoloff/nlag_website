@@ -6,9 +6,9 @@ body {
 	color: #555;
 }
 
-	ul {
+ul {
 		text-align: left;
-	}
+}
 
 table {
 	font-family: arial;
@@ -53,7 +53,7 @@ h3 {
 	margin: 0 0 4px 0;
 }
 
-.small{
+.small {
 	font-size: 10px;
 }
 
@@ -102,13 +102,14 @@ h3 {
 #pageContent {
 	padding: 10px;
 }
-	#hpAnnouncements {
-		padding-left: 7px;
-	}
 
-	.hpAnnouncements_p {
+#hpAnnouncements {
+		padding-left: 7px;
+}
+
+.hpAnnouncements_p {
 		margin-top: 0;
-	}
+}
 
 #footerContainer {
 	clear: left;
