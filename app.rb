@@ -2,8 +2,22 @@ require "sinatra/base"
 
 module Church
   class Application < Sinatra::Application
-    get "/" do
-      send_file File.join(settings.public_folder, "index.html")
+    ["/", "/index.html"].each do |path|
+      get path do
+        haml :index
+      end
+    end
+
+    get "/about_us.html" do
+      haml :about_us
+    end
+
+    get "/messages.html" do
+      haml :messages
+    end
+
+    get "/small_groups.html" do
+      haml :small_groups
     end
   end
 end

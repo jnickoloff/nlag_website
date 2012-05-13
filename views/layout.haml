@@ -1,0 +1,52 @@
+!!!
+%html
+  %head
+    %title New Life Assembly of God - Walla Walla, WA
+
+    %link{:rel => "stylesheet", :type => "text/css", :href => "css/style.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "css/sideNav.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "css/niftyCorners.css"}
+    %script{:type => "text/javascript", :src => "js/nifty.js"}
+
+    %style{:type => "text/css", :media => "print"}
+      .rtop, .rbottom{display: none}
+
+    :javascript
+      window.onload = function() {
+        RoundedTop("div#pageHeader","#fff","#901809");
+      }
+
+  %body
+    #globalContainer
+      #headerContainer
+        %img{:src => "images/logo.gif", :width => "752", :height => "99", :alt => "New Life Assembly of God - Walla Walla, WA"}
+        #navContainer
+          #navbox
+            %ul
+              %li
+                %a{:href => "index.html"} Home
+              %li
+                %a{:href => "small_groups.html"}Small Groups
+              %li
+                %a{:href => "messages.html"}Messages
+              %li
+                %a{:href => "about_us.html"}About Us
+
+        #col2
+          #contentContainer
+            =yield
+
+      #footerContainer
+        %div{:style => "float: left;"} 305 Detour Rd, Walla Walla, WA 99362
+        %div{:style => "float: right;"} 509-529-7756 | newlife@nlagonline.com
+        %div{:style => "clear: both;"}
+
+<!-- Google Analytics -->
+:javascript
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+:javascript
+  try {
+    var pageTracker = _gat._getTracker("UA-8284913-1");
+    pageTracker._trackPageview();
+  } catch(err) {}
