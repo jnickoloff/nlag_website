@@ -1,9 +1,18 @@
-source "http://rubygems.org"
+source :rubygems
 
-gem "sinatra"
-gem "thin"
-gem "haml"
-gem "rack-test"
-gem "rspec"
-gem "cucumber"
-gem "rake"
+group :production do
+  gem "sinatra"
+  gem "thin"
+  gem "haml"
+end
+
+group :test do
+  gem "rack-test"
+  gem "rspec"
+  gem "cucumber"
+end
+
+group :development do
+  gem "rake"
+  gem "heroku"
+end
