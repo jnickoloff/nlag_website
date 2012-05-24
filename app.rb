@@ -12,6 +12,10 @@ module Church
       haml :about_us
     end
 
+    get "/events.html" do
+      haml :events
+    end
+
     get "/messages.html" do
       haml :messages
     end

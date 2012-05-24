@@ -26,15 +26,17 @@
               %li
                 %a{:href => "index.html"} Home
               %li
-                %a{:href => "small_groups.html"}Small Groups
+                %a{:href => "events.html"} Events
               %li
-                %a{:href => "messages.html"}Messages
+                %a{:href => "small_groups.html"} Small Groups
+              -#%li
+                -#%a{:href => "messages.html"} Messages
               %li
-                %a{:href => "about_us.html"}About Us
+                %a{:href => "about_us.html"} About Us
 
-        #col2
-          #contentContainer
-            =yield
+      #col2
+        #contentContainer
+          =yield
 
       #footerContainer
         %div{:style => "float: left;"} 305 Detour Rd, Walla Walla, WA 99362
