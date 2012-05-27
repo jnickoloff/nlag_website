@@ -8,12 +8,13 @@ group :production do
 end
 
 group :test do
-  gem "rack-test"
+  gem "capybara"
   gem "rspec"
   gem "cucumber"
 end
 
 group :development do
+  gem "pry"
   gem "rake"
   gem "heroku"
 end

@@ -1,3 +1,3 @@
 require "./app"
 
-run Church::Application
+run Application

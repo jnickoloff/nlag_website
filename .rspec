@@ -1,0 +1,4 @@
+--color
+-I .
+-I models/
+-r spec/spec_helper
