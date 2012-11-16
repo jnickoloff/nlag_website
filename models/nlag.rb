@@ -1,24 +1,20 @@
 require "aws/s3"
-require_relative "../features/step_definitions/fake_aws"
 
 module Nlag
   class SermonList
-    include AWS
-
     def connect
-      S3::Base.establish_connection!(
+      AWS::S3::Base.establish_connection!(
         :access_key_id     => ENV["AWS_KEY_ID"],
-        :secret_access_key => ENV["AWS_SECRET_KEY"],
-        :server => "s3-us-west-1.amazonaws.com")
+        :secret_access_key => ENV["AWS_SECRET_KEY"])
     end
 
     def connected?
-      S3::Base.connected?
+      AWS::S3::Base.connected?
     end
 
     def each
       connect if not connected?
-      bucket = S3::Bucket.find("churchaudio")
+      bucket = AWS::S3::Bucket.find("nlagaudio")
       bucket.reverse_each {|s3_obj| yield AudioFile.on(s3_obj)}
     end
   end
