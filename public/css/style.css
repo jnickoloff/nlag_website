@@ -91,6 +91,7 @@ h3 {
 
 #contentContainer {
 	padding: 5px;
+  min-height: 500px
 }
 
 #pageHeader {

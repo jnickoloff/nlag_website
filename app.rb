@@ -1,7 +1,8 @@
+require "bundler/setup"
+require "sinatra/base"
+
 require_relative "models/nlag"
 
-require "sinatra/base"
-require "bundler/setup"
 
 class Application < Sinatra::Application
   ["/", "/index.html"].each do |path|
@@ -19,8 +20,9 @@ class Application < Sinatra::Application
   end
 
   get "/messages.html" do
-    @authorized = params[:password] == ENV["messages_password"]
-    @sermon_list = Nlag::SermonList.new
+    correct_password = ENV["messages_password"]
+    @authorized = (params[:password] == correct_password and not correct_password.nil?)
+    @sermon_list = Nlag::SermonList.new if @authorized
     haml :messages
   end
 
