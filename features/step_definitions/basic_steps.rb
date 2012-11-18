@@ -1,5 +1,5 @@
 Given /the password for the messages page is "(.*?)"$/ do |text|
-  ENV["messages_password"] = text
+  ENV["MESSAGES_PASSWORD"] = text
 end
 
 Given /^I am on the "(.*?)" page$/ do |page|
