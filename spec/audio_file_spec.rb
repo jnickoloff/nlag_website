@@ -24,6 +24,13 @@ describe AudioFile do
       [@file1, @file2].sort.should == [@file2, @file1]
     end
 
+    it "can sort 3 objects" do
+      s3_obj3 = mock("S3Object")
+      s3_obj3.should_receive(:key).any_number_of_times.and_return("2012.10.30 - yar")
+      file3 = AudioFile.on(s3_obj3)
+      [@file2, file3, @file1].sort.should == [@file2, @file1, file3]
+    end
+
     it "doesnt change if already in correct order" do
       [@file2, @file1].sort.should == [@file2, @file1]
     end

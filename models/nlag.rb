@@ -1,4 +1,5 @@
 require "aws/s3"
+require "date"
 
 module Nlag
   class SermonList
@@ -15,7 +16,8 @@ module Nlag
     def each
       connect if not connected?
       bucket = AWS::S3::Bucket.find("nlagaudio")
-      bucket.reverse_each {|s3_obj| yield AudioFile.on(s3_obj)}
+      list = bucket.collect {|s3_obj| AudioFile.on(s3_obj)}
+      list.sort.reverse_each {|ea| yield ea}
     end
   end
 

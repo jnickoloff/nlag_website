@@ -30,8 +30,10 @@ class Object
           objects.each {|ea| yield ea}
         end
 
-        def reverse_each
-          objects.reverse_each {|ea| yield ea}
+        def collect
+          list = []
+          each {|ea| list << (yield ea)}
+          list
         end
 
         def objects
@@ -43,7 +45,7 @@ class Object
           obj2.key = "2012.4.30 - Mr. Foo Bar - Que?.mp3"
           obj2.url = "http://test_url2"
 
-          [obj1, obj2]
+          [obj2, obj1]
         end
       end
     end
