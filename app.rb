@@ -20,8 +20,10 @@ class Application < Sinatra::Application
   end
 
   get "/messages.html" do
+    password = params[:password] || ""
     correct_password = ENV["MESSAGES_PASSWORD"]
-    @authorized = (params[:password] == correct_password and not correct_password.nil?)
+    @authorized = (password == correct_password and not correct_password.nil?)
+    @failed_attempt = (not @authorized and not password.empty?)
     @sermon_list = Nlag::SermonList.new if @authorized
     haml :messages
   end

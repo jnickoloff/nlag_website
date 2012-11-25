@@ -15,6 +15,7 @@ Feature: Audio file download
     And I enter the text "wrong password" in the "password" field
     When I click the "submit" button
     Then a password prompt should be displayed
+    And I should see the text "Incorrect password"
 
   Scenario: A correct password lets you in
     Given I am on the "Messages" page
@@ -31,4 +32,8 @@ Feature: Audio file download
       4.30 2012 Mr. Foo Bar Que?
       2.25 2012 Blarg Baz Great Sermon
       """
+
+  Scenario: The incorrect password prompt should not be initially shown
+    Given I am on the "Messages" page
+    Then I should not see the text "Incorrect"
 

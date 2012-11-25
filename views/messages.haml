@@ -3,6 +3,10 @@
 #pageContent
   - unless @authorized
     %p This area requires authorization.
+    - if @failed_attempt
+      %p{:style => "color:red"} Incorrect password
+    - else
+      %p
     Enter Password:
     %form{:action => "/messages.html", :method => "get"}
       %input#password{:type => "password", :name => "password"}
