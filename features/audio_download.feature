@@ -15,7 +15,8 @@ Feature: Audio file download
     And I enter the text "wrong password" in the "password" field
     When I click the "submit" button
     Then a password prompt should be displayed
-    And I should see the text "Incorrect password"
+    And I should see the text "Incorrect"
+    And I should see the text "password"
 
   Scenario: A correct password lets you in
     Given I am on the "Messages" page

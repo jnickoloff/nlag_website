@@ -4,10 +4,9 @@
   - unless @authorized
     %p This area requires authorization.
     - if @failed_attempt
-      %p{:style => "color:red"} Incorrect password
+      %p{:style => "color:red"} Incorrect, try entering the password again:
     - else
-      %p
-    Enter Password:
+      %p Enter password:
     %form{:action => "/messages.html", :method => "get"}
       %input#password{:type => "password", :name => "password"}
       %input{:type => "submit", :id => "submit"}
