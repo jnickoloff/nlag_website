@@ -16,5 +16,4 @@ end
 group :development do
   gem "pry"
   gem "rake"
-  gem "heroku"
 end
