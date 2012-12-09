@@ -7,9 +7,11 @@
       %p{:style => "color:red"} Incorrect, try entering the password again:
     - else
       %p Enter password:
-    %form{:action => "/messages.html", :method => "get"}
+    %form{:action => "/messages.html", :method => "get", :name =>  "password_form"}
       %input#password{:type => "password", :name => "password"}
       %input{:type => "submit", :id => "submit"}
+    :javascript
+      document.forms['password_form'].elements['password'].focus();
   - else
     %h1 Sermons (BETA)
     %table
